@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Google</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <ul>
+          <li id="user"></li>
+          <li><a href="#">Gmail</a></li>
+          <li><a href="#">Images</a></li>
+          <li id="apps"></li> <!-- Apps -->
+          <li id="notifications"></li> <!-- Notifications -->
+          <li id="user-menu"><div id="user-initial">M</div></li>   <!-- User dropdown menu -->
+        </ul>
+      </div>
+      <div id="content">
+        <center>
+          <div id="logo">
+          </div>
+        </center>
+
+        <form id="search-form">
+          <center>
+            <div class="search">
+              <input href="#" oninput="inputFunction()" name="search" id="search-box" >
+              <a id="cerca" href='#' >cerca</a>
+            </div>
+            
+            
+          </center>
+        </form>
+      </div>
+      <div id="footer">
+        <div id="footer-left">
+          <ul>
+            <li><a href="#">Advertising</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div id="footer-right">
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Use Google.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <!-- Code injected by live-server -->
+<!-- <script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script> -->
+<script src="app.js"></script>
+</body>
+</html>
