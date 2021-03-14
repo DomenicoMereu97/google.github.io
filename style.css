@@ -187,3 +187,22 @@ a:hover {
   
 }
 
+
+
+#bar{
+  display: none;
+}
+
+@media screen and (max-width: 592px){
+  #bar{
+    margin-top: 20px;
+    display: flex;
+    
+  
+  }
+
+}
+
+
+
+
