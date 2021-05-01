@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<!-- Mirrored from contacts.im/contacts?pin=Kt by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 May 2021 10:09:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
+        <title>Contacts</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap3.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style-ios.css"/>
+        <style>
+
+        .gris {
+            background-color: #dedede;
+        }
+        .custom-input {
+            box-shadow: none;
+            border: none;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+        }
+        .mylink {
+            border: none!important;
+            cursor: pointer !important;
+            border: none;
+
+        }
+        .tdgris{
+            padding: 4px 20px !important;
+        }
+        .contact_font {
+            font-size: 17px;
+        }
+        .topbar {
+            font-size: small;
+        }
+        .no-move {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            min-height: 100px;
+            width: 100%;
+            background-color: #f6f6f6;
+        }
+        .padder {
+            height: 45px;
+        }
+
+.btn-circle-gris {
+    background: linear-gradient(180deg, rgba(163,169,181,1) 0%, rgba(134,139,149,1) 100%);
+  background-color: #bebebe;
+  border-color: #bebebe;
+  color: #ffffff;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+#detail-content {
+    font-size: medium;
+    padding-top: 40px;
+}
+#contact-main-toolbar {
+    background-color: #f6f6f6;
+    position: relative;
+}
+#contact-main-toolbar .alphabetic{
+    position: absolute;
+    top: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#contact-main-toolbar .right {
+    right: 17px;
+}
+#contact-main-toolbar .left {
+    left: 17px;
+}
+#contact-main-toolbar .alphabetic span {
+    color: #007aff;
+    font-size: 11px;
+    margin: 1px 0;
+}
+#contact-main-search {
+    position: relative;
+    margin-top: -1px;
+    margin-bottom: 15px;
+}
+#contact-main-search input {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#contact-main-search .search-icon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.icon-left{
+    left: 24px;
+}
+.icon-right {
+    right: 24px;;
+}
+.info-owner {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+.info-owner-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(172,172,172,1) 0%, rgba(104,104,105,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+.info-owner-data {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.info-owner-data .name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.info-owner-data .target {
+    font-size: 12px;
+    color: #aaa;
+}
+.header {
+    background-color: #f6f6f6;
+    margin: 0;
+    padding-top: 16px;
+}
+table.custom-table {
+    margin-top: 53px;
+    border:none!important;
+    background-color: white;
+}
+table.detail-table {
+    margin-top: 20px;
+    border: none;
+}
+td {
+    padding: 8px 20px 0px!important;
+}
+.contact-detail-buttons span {
+    font-size: 12px;
+    color: #007aff;
+}
+.contact-detail-buttons:last-child span {
+    color: #ddd;
+}
+.btn-gry {
+    color: #ddd;
+    background-color: #f7f7f7;
+    border-color: #ddd;
+}
+#contact-details-header {
+    border-bottom: 1px solid #f1f1f1;
+    background-color: #f7f7f7;
+}
+.go-screen {
+    height: 70vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+
+#numero {
+    color: #007aff;
+    padding-bottom: 8px;
+}
+
+#notas {
+    padding-top: 8px;
+}
+.container-fluid {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+nav i{
+    color: #929292;
+}
+nav p{
+    font-size: 0.7em;
+}
+nav .row{
+    padding: 5px 10px 15px 10px;
+}
+nav .col-xs-2{
+    padding: 0px;
+    margin: 0 5px;
+}
+.whitecard{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+}
+.notes{
+    margin-top: 20px;
+}
+.lineheight{
+    line-height: 0.7;
+}
+.row{
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+}
+.btn-default{
+    background-color: white !important;
+    border-color: white !important;
+}
+.btn{
+    width: 100%;
+    line-height: 1.2;
+    border-radius: 10px;
+}
+.col-xs-3{
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+.btn-circle.btn-xl{
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    font-size: 35px;
+}
+hr{
+    margin-top: 7px !important;
+    margin-bottom: 0px !important;
+    border-top: 1px solid #ddd !important;
+}
+.directionrtl {
+    direction: rtl;
+}
+        </style>
+    </head>
+    <body style="background-color:#f7f7f7;" id="body-inv">
+        <nav class="navbar navbar-default navbar-fixed-bottom normal">
+            <div class="container" style="padding: 0 !important;">
+                <div class="row">
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%; margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.74 75" style="fill:#929392;"><path style="fill: #929392;" d="M15.69,26.13c13.38,0,13.38,0,17.53-12.65,1-3.15,2-6.33,3.16-9.45C37,2.28,37.14-.1,40,0s2.83,2.52,3.44,4.26c2,5.79,4,11.61,5.76,17.51,1,3.32,2.75,4.47,6.12,4.36,6.49-.19,13-.11,19.48,0,1.92,0,4.29,0,4.86,2.5.49,2.24-1.49,3.1-3,4.15-5,3.58-10,7.23-15,10.69C58.43,45.67,57.53,48.16,59,52c2.19,5.73,3.91,11.65,5.85,17.47.57,1.72,1.65,3.49-.42,4.92s-3.54,0-5-1c-5-3.52-10.14-7-15-10.8-3.35-2.63-6.07-2.44-9.34.14-4.68,3.71-9.63,7.1-14.55,10.51-1.57,1.08-3.29,2.7-5.39,1.06-1.94-1.52-.72-3.31-.16-5,2-5.92,3.71-11.82,5.87-17.57,1.36-3.6.48-6-2.55-8.1C13,40,7.72,36.17,2.46,32.38c-1.34-1-2.93-1.93-2.33-4S2.6,26.24,4.2,26.17C8,26,11.86,26.13,15.69,26.13Z"/></svg>
+                        <p id="favoritos"></p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 74">><path style="fill: #929392;" d="M37,0h-.34A37.11,37.11,0,1,0,37,0Zm3.2,26.58-.07.11c0,4.33-.11,8.66,0,13,.09,2.56-.79,3.56-3.43,3.49-5.65-.14-11.31,0-17,0-1.83,0-4,.19-3.81-2.59C16.14,38,18.22,38,20.07,38c3.66,0,7.33-.16,11,0,3,.16,4.12-.92,4-4-.18-6.65-.06-13.31,0-20,0-2.06,0-4.33,3-4.13,2.77.19,2.1,2.54,2.13,4.24C40.28,18.27,40.2,22.42,40.2,26.58Z"/></svg>
+                        <p id="recientes"></p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%; color: #3478f5; fill: #3478f5;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.89 76.02"><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><g id="Capa_2-2" data-name="Capa 2"><g id="Capa_1-2-2" data-name="Capa 1-2"><path style="fill: #3478f5;" class="cls-1" d="M38.8,0C18.46-.53.68,16.46,0,37S16.59,75.53,37.34,76c20.35.38,38-16.69,38.54-37.27C76.38,18.39,59.37.64,38.8,0ZM59.54,57.47c-11.27-9-32.36-8.84-43.33.2-2.47,2-3.38,1.37-4.9-.66-8.89-11.84-7.36-31.3,3.48-42.2,11-11.12,29.64-12.71,42-3.58,8.91,6.58,13.5,15.78,13.45,28,.25,5.64-1.83,11.69-5.35,17.29C63.51,58.73,62.33,59.69,59.54,57.47Z"/><path style="fill: #3478f5;" d="M50.3,30.5C50.3,38.07,44.8,44.08,38,44s-12.23-6.19-12.2-13.68c0-7.12,5.55-13.2,12.07-13.29C44.6,17,50.32,23.14,50.3,30.5Z"/></g></g></g></g></svg>
+                        <p id="contactosbar" style="color: #3478f5;">Contacts</p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 71.43"><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path style="fill: #929392;" d="M9.46,0A9.61,9.61,0,0,0,0,9.64a9.44,9.44,0,0,0,9.36,9.11,9.57,9.57,0,0,0,9.38-9.2C18.86,5.11,14,.07,9.46,0Z"/><path style="fill: #929392;" d="M61.59,18.75A9.43,9.43,0,0,0,71,9.65,9.61,9.61,0,0,0,61.49,0c-4.49.07-9.4,5.11-9.28,9.54A9.58,9.58,0,0,0,61.59,18.75Z"/><path style="fill: #929392;" d="M8.8,52.68A9.44,9.44,0,0,0,0,62.32a9.62,9.62,0,0,0,9.5,9.11c4.53-.1,9.39-5.15,9.24-9.59A9.57,9.57,0,0,0,8.8,52.68Z"/><path style="fill: #929392;" d="M61.71,52.68a9.61,9.61,0,0,0-9.45,9.63c.21,4.35,4.9,9,9.21,9.11A9.59,9.59,0,0,0,71,61.85,9.44,9.44,0,0,0,61.71,52.68Z"/><path style="fill: #929392;" d="M35.66,18.71a9.26,9.26,0,0,0,9.13-9.27C44.81,4.89,40,0,35.54,0s-9.33,4.76-9.39,9.33q0,.15,0,.29A9.3,9.3,0,0,0,35.66,18.71Z"/><path style="fill: #929392;" d="M35.9,52.91a9.33,9.33,0,0,0-9.75,8.89c-.11,4.61,4.48,9.42,9.08,9.61s9.41-4.54,9.57-9.12A9.33,9.33,0,0,0,35.9,52.91Z"/><path style="fill: #929392;" d="M36.2,26.71a9.34,9.34,0,0,0-10,8.57,9.33,9.33,0,1,0,18.65.62A9.34,9.34,0,0,0,36.2,26.71Z"/><path style="fill: #929392;" d="M9.18,26.58a9.14,9.14,0,0,0-.09,18.27c5,0,9.53-4.08,9.65-8.85A9.56,9.56,0,0,0,9.18,26.58Z"/><path style="fill: #929392;" d="M62,26.55c-5.3,0-9.76,4.3-9.62,9.3a9.44,9.44,0,0,0,9.47,9A9.14,9.14,0,0,0,71,35.79h0A9.14,9.14,0,0,0,62,26.55Z"/></g></g></svg>
+                        <p id="teclado"></p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 60%; margin-top: 8px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.74 50.4"><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path style="fill: #929392;" d="M55.46,50.33c-9.66,0-19.32-.19-29,.05a25.7,25.7,0,0,1-26-20.1c-2-9.49,2.42-23.94,16-28.69a24.92,24.92,0,0,1,32.08,14.6q.39,1,.68,2.11C51,24.95,50.8,31.79,46.7,37.91a9.22,9.22,0,0,0-1.44,2.68c-.1.42.64,1.54,1,1.54,6.33.1,12.65.09,19,.07,1.36,0,1.76-.7,1.16-1.9a21.88,21.88,0,0,0-1.25-2.15c-4.41-6.8-4.51-14.19-2.11-21.47A25.09,25.09,0,1,1,86.94,50.32c-10.49.12-21,0-31.47,0ZM69.75,25C69.3,33.38,76.46,42,86.18,42.17c9.2.21,17.76-7.64,17.44-16.77-.37-10.27-7.11-16.7-17.1-17.07C77.46,8,69.81,15.87,69.75,25ZM25.46,8.27C16.27,8.14,7.7,16,8.09,25.1c.43,10.23,7.06,16.73,17.13,17,9.21.24,16.61-7.22,16.69-16.75A16.79,16.79,0,0,0,25.46,8.27Z"/></g></g></svg>
+                        <p id="buzon"></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-default navbar-fixed-bottom invertido" style="display: none;">
+            <div class="container" style="padding: 0 !important;">
+                <div class="row">
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 60%; margin-top: 8px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.74 50.4"><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path style="fill: #929392;" d="M55.46,50.33c-9.66,0-19.32-.19-29,.05a25.7,25.7,0,0,1-26-20.1c-2-9.49,2.42-23.94,16-28.69a24.92,24.92,0,0,1,32.08,14.6q.39,1,.68,2.11C51,24.95,50.8,31.79,46.7,37.91a9.22,9.22,0,0,0-1.44,2.68c-.1.42.64,1.54,1,1.54,6.33.1,12.65.09,19,.07,1.36,0,1.76-.7,1.16-1.9a21.88,21.88,0,0,0-1.25-2.15c-4.41-6.8-4.51-14.19-2.11-21.47A25.09,25.09,0,1,1,86.94,50.32c-10.49.12-21,0-31.47,0ZM69.75,25C69.3,33.38,76.46,42,86.18,42.17c9.2.21,17.76-7.64,17.44-16.77-.37-10.27-7.11-16.7-17.1-17.07C77.46,8,69.81,15.87,69.75,25ZM25.46,8.27C16.27,8.14,7.7,16,8.09,25.1c.43,10.23,7.06,16.73,17.13,17,9.21.24,16.61-7.22,16.69-16.75A16.79,16.79,0,0,0,25.46,8.27Z"/></g></g></svg>
+                        <p id="inv-buzon"></p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71 71.43"><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><path style="fill: #929392;" d="M9.46,0A9.61,9.61,0,0,0,0,9.64a9.44,9.44,0,0,0,9.36,9.11,9.57,9.57,0,0,0,9.38-9.2C18.86,5.11,14,.07,9.46,0Z"/><path style="fill: #929392;" d="M61.59,18.75A9.43,9.43,0,0,0,71,9.65,9.61,9.61,0,0,0,61.49,0c-4.49.07-9.4,5.11-9.28,9.54A9.58,9.58,0,0,0,61.59,18.75Z"/><path style="fill: #929392;" d="M8.8,52.68A9.44,9.44,0,0,0,0,62.32a9.62,9.62,0,0,0,9.5,9.11c4.53-.1,9.39-5.15,9.24-9.59A9.57,9.57,0,0,0,8.8,52.68Z"/><path style="fill: #929392;" d="M61.71,52.68a9.61,9.61,0,0,0-9.45,9.63c.21,4.35,4.9,9,9.21,9.11A9.59,9.59,0,0,0,71,61.85,9.44,9.44,0,0,0,61.71,52.68Z"/><path style="fill: #929392;" d="M35.66,18.71a9.26,9.26,0,0,0,9.13-9.27C44.81,4.89,40,0,35.54,0s-9.33,4.76-9.39,9.33q0,.15,0,.29A9.3,9.3,0,0,0,35.66,18.71Z"/><path style="fill: #929392;" d="M35.9,52.91a9.33,9.33,0,0,0-9.75,8.89c-.11,4.61,4.48,9.42,9.08,9.61s9.41-4.54,9.57-9.12A9.33,9.33,0,0,0,35.9,52.91Z"/><path style="fill: #929392;" d="M36.2,26.71a9.34,9.34,0,0,0-10,8.57,9.33,9.33,0,1,0,18.65.62A9.34,9.34,0,0,0,36.2,26.71Z"/><path style="fill: #929392;" d="M9.18,26.58a9.14,9.14,0,0,0-.09,18.27c5,0,9.53-4.08,9.65-8.85A9.56,9.56,0,0,0,9.18,26.58Z"/><path style="fill: #929392;" d="M62,26.55c-5.3,0-9.76,4.3-9.62,9.3a9.44,9.44,0,0,0,9.47,9A9.14,9.14,0,0,0,71,35.79h0A9.14,9.14,0,0,0,62,26.55Z"/></g></g></svg>
+                        <p id="inv-teclado"></p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%; color: #3478f5; fill: #3478f5;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.89 76.02"><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><g id="Capa_2-2" data-name="Capa 2"><g id="Capa_1-2-2" data-name="Capa 1-2"><path style="fill: #3478f5;" class="cls-1" d="M38.8,0C18.46-.53.68,16.46,0,37S16.59,75.53,37.34,76c20.35.38,38-16.69,38.54-37.27C76.38,18.39,59.37.64,38.8,0ZM59.54,57.47c-11.27-9-32.36-8.84-43.33.2-2.47,2-3.38,1.37-4.9-.66-8.89-11.84-7.36-31.3,3.48-42.2,11-11.12,29.64-12.71,42-3.58,8.91,6.58,13.5,15.78,13.45,28,.25,5.64-1.83,11.69-5.35,17.29C63.51,58.73,62.33,59.69,59.54,57.47Z"/><path style="fill: #3478f5;" d="M50.3,30.5C50.3,38.07,44.8,44.08,38,44s-12.23-6.19-12.2-13.68c0-7.12,5.55-13.2,12.07-13.29C44.6,17,50.32,23.14,50.3,30.5Z"/></g></g></g></g></svg>
+                        <p id="inv-contactosbar" style="color: #3478f5;">Contacts</p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 74 74">><path style="fill: #929392;" d="M37,0h-.34A37.11,37.11,0,1,0,37,0Zm3.2,26.58-.07.11c0,4.33-.11,8.66,0,13,.09,2.56-.79,3.56-3.43,3.49-5.65-.14-11.31,0-17,0-1.83,0-4,.19-3.81-2.59C16.14,38,18.22,38,20.07,38c3.66,0,7.33-.16,11,0,3,.16,4.12-.92,4-4-.18-6.65-.06-13.31,0-20,0-2.06,0-4.33,3-4.13,2.77.19,2.1,2.54,2.13,4.24C40.28,18.27,40.2,22.42,40.2,26.58Z"/></svg>
+                        <p id="inv-recientes"></p>
+                    </div>
+                    <div class="col-xs-2 text-center">
+                        <svg style="width: 40%; margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.74 75" style="fill:#929392;"><path style="fill: #929392;" d="M15.69,26.13c13.38,0,13.38,0,17.53-12.65,1-3.15,2-6.33,3.16-9.45C37,2.28,37.14-.1,40,0s2.83,2.52,3.44,4.26c2,5.79,4,11.61,5.76,17.51,1,3.32,2.75,4.47,6.12,4.36,6.49-.19,13-.11,19.48,0,1.92,0,4.29,0,4.86,2.5.49,2.24-1.49,3.1-3,4.15-5,3.58-10,7.23-15,10.69C58.43,45.67,57.53,48.16,59,52c2.19,5.73,3.91,11.65,5.85,17.47.57,1.72,1.65,3.49-.42,4.92s-3.54,0-5-1c-5-3.52-10.14-7-15-10.8-3.35-2.63-6.07-2.44-9.34.14-4.68,3.71-9.63,7.1-14.55,10.51-1.57,1.08-3.29,2.7-5.39,1.06-1.94-1.52-.72-3.31-.16-5,2-5.92,3.71-11.82,5.87-17.57,1.36-3.6.48-6-2.55-8.1C13,40,7.72,36.17,2.46,32.38c-1.34-1-2.93-1.93-2.33-4S2.6,26.24,4.2,26.17C8,26,11.86,26.13,15.69,26.13Z"/></svg>
+                        <p id="inv-favoritos"></p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" id="main-content">
+                        <div class="no-move">
+                                <h4 class="header">
+                <div class="row" id="contact-main-toolbar" style="padding: 0 10px;">
+                    <div class="alphabetic right">
+                        <span>A</span>
+                        <span>B</span>
+                        <span>C</span>
+                        <span>D</span>
+                        <span>E</span>
+                        <span>F</span>
+                        <span>G</span>
+                        <span>H</span>
+                        <span>I</span>
+                        <span>J</span>
+                        <span>K</span>
+                        <span>L</span>
+                        <span>M</span>
+                        <span>N</span>
+                        <span>Ñ</span>
+                        <span>O</span>
+                        <span>P</span>
+                        <span>Q</span>
+                        <span>R</span>
+                        <span>S</span>
+                        <span>T</span>
+                        <span>U</span>
+                        <span>V</span>
+                        <span>W</span>
+                        <span>X</span>
+                        <span>Y</span>
+                        <span>Z</span>
+                        <span>#</span>
+                    </div>
+                    <div class="col-xs-4 normal"><a id="grupos" href="#"></a></div>
+                    <div class="col-xs-4 text-left invertido" style="display: none;"><a href="#">+</a>&nbsp;</div>
+                    <div id="contactos" class="col-xs-4 text-center" style="padding-bottom: 20px; font-weight: bold;"></div>
+                    <div class="col-xs-4 normal text-right">
+                        <button id="plus" onclick="openFullScreen();">
+                        <div ><a href="#">+</a>&nbsp;</div>
+                        </button>
+                    </div>
+                    
+                    <div class="col-xs-4 invertido" style="display: none;"><a id="inv-grupos" href="#"></a></div>
+                                        <div class="col-xs-12" id="contact-main-search">
+                        <input id="buscar" type="text" class="form-control custom-input">
+                        <i style="color: #555; opacity:.5" class="fa fa-search search-icon icon-left"></i>
+                    </div>
+                    <div class="col-xs-12" style="display: none">
+                        <div class="info-owner">
+                            <div class="info-owner-avatar">
+                                N
+                            </div>
+                            <div class="info-owner-data">
+                                <div class="name">Name</div>
+                                <div class="target">Mi tarjeta</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="contact-details-toolbar" style="display: none;">
+                    <div class="col-xs-4 normal"><a href="#" id="back-to-main"></a></div>
+                    <div class="col-xs-4 text-left invertido" style="display: none;"><a id="inv-editar" href="#"></a>&nbsp;</div>
+                    <div class="col-xs-4 text-center"></div>
+                    <div class="col-xs-4 text-right normal"><a id="editar" href="#"></a>&nbsp;</div>
+                    <div class="col-xs-4 invertido" style="display: none;"><a href="#" id="inv-back-to-main"></a></div>
+                </div>
+                </h4>
+
+
+                <div class="container" id="contact-details-header" align="center" style="display: none;">
+                    <button id="contact-detail-letter" type="button" class="btn btn-circle btn-xl btn-circle-gris">A</button>
+                    <h2 style="margin-bottom: 25px;" id="contact-details-name"></h2>
+                    <div class="row">
+                        <div class="normal">
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-comment fa-2x"></i>
+                                    <br>
+                                    <span id="mensaje"></span>
+                                </button>
+                            </div>
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-phone fa-2x"></i>
+                                    <br>
+                                    <span id="celular"></span>
+                                </button>
+                            </div>
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-video-camera fa-2x"></i>
+                                    <br>
+                                    <span id="video"></span>
+                                </button>
+                            </div>
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default btn-gry">
+                                    <i class="fa fa-envelope-o fa-2x"></i>
+                                    <br>
+                                    <span id="correo"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="invertido" style="display: none;">
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default btn-gry">
+                                    <i class="fa fa-envelope-o fa-2x"></i>
+                                    <br>
+                                    <span id="inv-correo"></span>
+                                </button>
+                            </div>
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-video-camera fa-2x"></i>
+                                    <br>
+                                    <span id="inv-video"></span>
+                                </button>
+                            </div>
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-phone fa-2x"></i>
+                                    <br>
+                                    <span id="inv-celular"></span>
+                                </button>
+                            </div>
+                            <div class="col-xs-3 contact-detail-buttons">
+                                <button type="button" class="btn btn-default">
+                                    <i class="fa fa-comment fa-2x"></i>
+                                    <br>
+                                    <span id="inv-mensaje"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        </div>
+                    <p></p>
+                </div>
+            </div>
+            <p>
+                        <div id="contact-main-contactlist">
+                <div class="padder"></div>
+                                <table class="table table-responsive custom-table">
+                                                                                                    <tr><td class="gris tdgris"><strong>A</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Agnese Russo">Agnese Russo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Alessandra Ferrari">Alessandra Ferrari<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Alessandro Esposito">Alessandro Esposito<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Alessia Colombo">Alessia Colombo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Alessia Bianchi">Alessia Bianchi<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Alice">Alice<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>B</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Bernardo">Bernardo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Beatrice">Beatrice<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Benedetta">Benedetta<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>C</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Carmelo Ferraro">Carmelo Ferraro<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Cecco Riva">Cecco Riva<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Celina Conte">Celina Conte<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Ciccio Fiore">Ciccio Fiore<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Cecilia">Cecilia<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>D</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Daniela">Daniela<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Davide">Davide<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Dario">Dario<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Daniele">Daniele<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Diego">Diego<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Domi">Domi<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>E</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Ele">Ele<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Elia">Elia<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Eleonora">Eleonora<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Elena">Elena<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Elio">Elio<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>L</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Lele">Lele<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Luca">Luca<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Lillo">Lillo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Leo">Leo<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>M</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Mia">Mia<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Massimiliano">Massimiliano<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Massimo">Massimo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Mimmo">Mimmo<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>N</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Nico">Nico<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Nino">Nino<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Ninni">Ninni<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Nonno">Nonno<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Nanni">Nanni<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Nicolò">Nicolò<strong></strong><hr></td></tr>
+                                                                                                    <tr><td class="gris tdgris"><strong>P</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Patty">Patty<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Paolo">Paolo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Papi">Papi<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Pepo">Pepo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Pippo">Pippo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="gris tdgris"><strong>R</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Raffaele">Raffaele<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Raffaele Tacchini">Raffaele Tacchini<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Renzo Taccola">Renzo Taccola<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Renzo Tafuri">Renzo Tafuri<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Riccardo Tagliafierro">Riccardo Tagliafierro<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Riccardo Taliani">Riccardo Taliani<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Rita Taliercio">Rita Taliercio<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Rita">Rita <strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Rocco Tamburello">Rocco Tamburello<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Rocco Tamburi">Rocco Tamburi<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Romeo Tedesco">Romeo Tedesco<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Romilda Telesio">Romilda Telesio<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="gris tdgris"><strong>S</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Salvatore Togliatti">Salvatore Togliatti<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Samuele Tognazzi">Samuele Tognazzi<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Sandra Toldo">Sandra Toldo<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Santuzza Tolentino">Santuzza Tolentino<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Sara">Sara <strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Sebastiano Tomasini">Sebastiano Tomasini<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Secondo Tomei">Secondo Tomei<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Simona">Simona <strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Simone">Simone <strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Sofia Torricelli">Sofia Torricelli<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Sofia Toscani">Sofia Toscani<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Sofia Toscanini">Sofia Toscanini<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Sonia">Sonia<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Stefania Tosi">Stefania Tosi<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Stefano Toso">Stefano Toso<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="gris tdgris"><strong>T</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Teresa Tosto">Teresa Tosto<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Thomas Totino">Thomas Totino<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="gris tdgris"><strong>V</strong></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Valentina Tozzi">Valentina Tozzi<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Valeria">Valeria <strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Vanessa Traetta">Vanessa Traetta<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Viola Trapanese">Viola Trapanese<strong></strong><hr></td></tr>
+                                                                                                                <tr><td class="mylink contact_font" data-contact="Virginia Trapani">Virginia Trapani<strong></strong><hr></td></tr>
+                                                                                                                
+                                                                                                    
+
+                                                                        
+                                                        </table>
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid" style="display: none;" id="detail-content">
+        <div class="padder"></div><div class="padder"></div>
+        <div class="padder"></div><div class="padder"></div>
+        <div class="padder"></div><div class="padder">
+        <div class="whitecard">
+                <div id="cel"></div>
+                <div href="#" id="numero"></div>
+            </div>
+            <div class="whitecard notes">
+                <p id="notas"></p>
+                <br>
+                <br>
+            </div>
+            <div class="whitecard notes lineheight">
+                <a id="enviar" href="#"></a>
+                <hr style="margin: 20px 0 !important;">
+                <a id="compartir-contacto" href="#"></a>
+                <hr style="margin: 20px 0 !important;">
+                <a id="add" href="#"></a>
+            </div>
+            <div class="whitecard notes">
+                <a id="emergencia" href="#"></a>
+            </div>
+
+        </div>
+
+    </body>
+    
+        <script src=js/jquery-3.3.1.min.js></script>
+        <script src=js/bootstrap3.min.js></script>
+
+        <script>
+        if(window.navigator.languages[0].includes('es')) {
+            $('#grupos').html('&nbsp; Grupos');
+            $('#contactos').html('Contactos');
+            $('#buscar').attr('placeholder', 'Buscar');
+            $('#back-to-main').html('&nbsp;&lt; Contactos');
+            $('#editar').html('Editar');
+            $('#mensaje').html('mensaje');
+            $('#celular').html('llamar');
+            $('#video').html('video');
+            $('#cel').html('iPhone');
+            $('#correo').html('correo');
+            $('#notas').html('Notas');
+            $('#enviar').html('Enviar mensaje');
+            $('#compartir-contacto').html('Compartir contacto');
+            $('#add').html('Agregar a Favoritos');
+            $('#emergencia').html('Agregar a contactos de emergencia');
+            $('#ubicacion').html('Compartir mi ubicación');
+            $('#favoritos').html('Favoritos');
+            $('#recientes').html('Recientes');
+            $('#contactosbar').html('Contactos');
+            $('#teclado').html('Teclado');
+            $('#buzon').html('Buzon de Voz');
+       }
+        else if(window.navigator.languages[0].includes('pt')) {
+            $('#grupos').html('&nbsp; Grupos');
+            $('#contactos').html('Contatos');
+            $('#buscar').attr('placeholder', 'Procurar');
+            $('#back-to-main').html('&nbsp;&lt; Contatos');
+            $('#editar').html('Editar');
+            $('#mensaje').html('mensagem');
+            $('#celular').html('ligar');
+            $('#video').html('video');
+            $('#cel').html('Telefone');
+            $('#correo').html('enviar');
+            $('#notas').html('Notas');
+            $('#enviar').html('Enviar mensagem');
+            $('#compartir-contacto').html('Compartilhar contato');
+            $('#add').html('Adicionar aos favoritos');
+            $('#emergencia').html('Adicionar a contatos de emergência');
+            $('#ubicacion').html('Compartilhar minha localização');
+            $('#favoritos').html('Favoritos');
+            $('#recientes').html('Recentes');
+            $('#contactosbar').html('Contatos');
+            $('#teclado').html('Teclado');
+            $('#buzon').html('Voicemail');
+
+        }
+        else if(window.navigator.languages[0].includes('fr')) {
+            $('#grupos').html('&nbsp; Groupes');
+            $('#contactos').html('Contacts');
+            $('#buscar').attr('placeholder', 'Rechercher');
+            $('#back-to-main').html('&nbsp;&lt; Contacts');
+            $('#editar').html('Modifier');
+            $('#mensaje').html('message');
+            $('#celular').html('appel');
+            $('#video').html('vidéo');
+            $('#cel').html('Portable');
+            $('#correo').html('e-mail');
+            $('#notas').html('Notes');
+            $('#enviar').html('Envoyer le message');
+            $('#compartir-contacto').html('Partager cette fiche');
+            $('#add').html('Ajouter aux Favoris');
+            $('#emergencia').html('Ajouter aux contacts d´urgence');
+            $('#ubicacion').html('Partager ma position');
+            $('#favoritos').html('Favoris');
+            $('#recientes').html('Récents');
+            $('#contactosbar').html('Contacts');
+            $('#teclado').html('Clavier');
+            $('#buzon').html('Messagerie');
+
+        }
+        else if(window.navigator.languages[0].includes('ru')) {
+            $('#grupos').html('&nbsp; группы');
+            $('#contactos').html('контакты');
+            $('#buscar').attr('placeholder', 'Поиск');
+            $('#back-to-main').html('&nbsp;&lt; контакты');
+            $('#editar').html('редактировать');
+            $('#mensaje').html('сообщение');
+            $('#celular').html('вызов');
+            $('#video').html('видео');
+            $('#cel').html('телефон');
+            $('#correo').html('примечания');
+            $('#notas').html('почта');
+            $('#enviar').html('Отправить сообщение');
+            $('#compartir-contacto').html('Добавить в избранное');
+            $('#add').html('Добавить в избранное');
+            $('#emergencia').html('Добавить в экстренные контакты');
+            $('#ubicacion').html('Поделитесь своим местоположением');
+            $('#favoritos').html('Избранное');
+            $('#recientes').html('Недавние');
+            $('#contactosbar').html('Контакты');
+            $('#teclado').html('Клавиатура');
+            $('#buzon').html('Aвтоответчик');
+
+        }
+        else if(window.navigator.languages[0].includes('hi')) {
+            $('#grupos').html('&nbsp; समूह');
+            $('#contactos').html('संपर्क');
+            $('#buscar').attr('placeholder', 'खोजें');
+            $('#back-to-main').html('&nbsp;&lt; संपर्क');
+            $('#editar').html('संपादित करें');
+            $('#mensaje').html('संदेश');
+            $('#celular').html('कॉल');
+            $('#video').html('वीडियो');
+            $('#cel').html('फ़ोन');
+            $('#correo').html('नोट्स');
+            $('#notas').html('मेल');
+            $('#enviar').html('संदेश भेजें');
+            $('#compartir-contacto').html('संपर्क साझा करें');
+            $('#add').html('पसंदीदा में जोड़ें');
+            $('#emergencia').html('आपातकालीन संपर्क में जोड़ें');
+            $('#ubicacion').html('मेरा स्थान साझा करें');
+            $('#favoritos').html('पसंदीदा');
+            $('#recientes').html('हाल ही');
+            $('#contactosbar').html('संपर्क');
+            $('#teclado').html('कीपैड');
+            $('#buzon').html('स्वर का मेल');
+
+        }
+        else if(window.navigator.languages[0].includes('vi')) {
+            $('#grupos').html('&nbsp; Nhóm');
+            $('#contactos').html('Liên hệ');
+            $('#buscar').attr('placeholder', 'Tìm kiếm');
+            $('#back-to-main').html('&nbsp;&lt; Liên hệ');
+            $('#editar').html('Chỉnh sửa');
+            $('#mensaje').html('tin nhắn');
+            $('#celular').html('gọi');
+            $('#video').html('video');
+            $('#cel').html('Điện thoại');
+            $('#correo').html('Ghi chú');
+            $('#notas').html('thư');
+            $('#enviar').html('Gửi tin nhắn');
+            $('#compartir-contacto').html('Chia sẻ Liên hệ');
+            $('#add').html('Thêm vào mục yêu thích');
+            $('#emergencia').html('Thêm vào danh bạ khẩn cấp');
+            $('#ubicacion').html('Chia sẻ vị trí của tôi');
+            $('#favoritos').html('Yêu thích');
+            $('#recientes').html('Gần đây');
+            $('#contactosbar').html('Liên lạc');
+            $('#teclado').html('Bàn phím');
+            $('#buzon').html('Thư thoại');
+
+        }
+        else if(window.navigator.languages[0].includes('de')) {
+            $('#grupos').html('&nbsp; Gruppen');
+            $('#contactos').html('Kontakte');
+            $('#buscar').attr('placeholder', 'Suchen');
+            $('#back-to-main').html('&nbsp;&lt; Kontakte');
+            $('#editar').html('Bearbeiten');
+            $('#mensaje').html('Nachricht');
+            $('#celular').html('Anrufen');
+            $('#video').html('Video');
+            $('#cel').html('Mobil');
+            $('#correo').html('E-mail');
+            $('#notas').html('Notizen');
+            $('#enviar').html('Nachricht senden');
+            $('#compartir-contacto').html('Kontakt teilen');
+            $('#add').html('Als Favorit sichern');
+            $('#emergencia').html('Zu Notfallkontakten');
+            $('#ubicacion').html('Standort teilen');
+            $('#favoritos').html('Favoriten');
+            $('#recientes').html('Anrufliste');
+            $('#contactosbar').html('Kontakte');
+            $('#teclado').html('Ziffernblock');
+            $('#buzon').html('Voicemail');
+         }
+        else if(window.navigator.languages[0].includes('id')) {
+            $('#grupos').html('&nbsp; Grup');
+            $('#contactos').html('Kontak');
+            $('#buscar').attr('placeholder', 'Cari');
+            $('#back-to-main').html('&nbsp;&lt; Kontak');
+            $('#editar').html('Edit');
+            $('#mensaje').html('pesan');
+            $('#celular').html('panggilan');
+            $('#video').html('video');
+            $('#cel').html('Telepon');
+            $('#correo').html('surat');
+            $('#notas').html('Catatan');
+            $('#enviar').html('Mengirim pesan');
+            $('#compartir-contacto').html('Berbagi kontak');
+            $('#add').html('Tambahkan ke Favorit');
+            $('#emergencia').html('Tambahkan ke Kontak Darurat');
+            $('#ubicacion').html('Bagikan Lokasiku');
+            $('#favoritos').html('Favorit');
+            $('#recientes').html('Terbaru');
+            $('#contactosbar').html('Kontak');
+            $('#teclado').html('Papan tombol');
+            $('#buzon').html('Pesan suara');
+        }
+        else if(window.navigator.languages[0].includes('el')) {
+            $('#grupos').html('&nbsp; Ομάδες');
+            $('#contactos').html('Επαφές');
+            $('#buscar').attr('placeholder', 'Αναζήτηση');
+            $('#back-to-main').html('&nbsp;&lt; Επαφές');
+            $('#editar').html('Επεξεργασία');
+            $('#mensaje').html('μήνυμα');
+            $('#celular').html('κλήση');
+            $('#video').html('βίντεο');
+            $('#cel').html('Τηλέφωνο');
+            $('#correo').html('ταχυδρομείο');
+            $('#notas').html('Σημειώσεις');
+            $('#enviar').html('Να στείλετε μήνυμα');
+            $('#compartir-contacto').html('Κοινή χρήση επαφής');
+            $('#add').html('Προσθήκη στα αγαπημένα');
+            $('#emergencia').html('Προσθήκη στις Επαφές έκτακτης ανάγκης');
+            $('#ubicacion').html('Κοινή χρήση της τοποθεσίας μου');
+            $('#favoritos').html('Αγαπημένα');
+            $('#recientes').html('Πρόσφατα');
+            $('#contactosbar').html('Επαφές');
+            $('#teclado').html('Πληκτρολόγιο');
+            $('#buzon').html('Τηλέφωνής');
+        }
+
+     else if(window.navigator.languages[0].includes('tr')) {
+            $('#grupos').html('&nbsp; Gruplar');
+            $('#contactos').html('Kişiler');
+            $('#buscar').attr('placeholder', 'Arama');
+            $('#back-to-main').html('&nbsp;&lt; Kişiler');
+            $('#editar').html('Düzenle');
+            $('#mensaje').html('İleti');
+            $('#celular').html('aramak');
+            $('#video').html('video');
+            $('#cel').html('Telefon');
+            $('#correo').html('posta');
+            $('#notas').html('Notlar');
+            $('#enviar').html('Mesaj gönder');
+            $('#compartir-contacto').html('Bağlantı Paylaş');
+            $('#add').html('Favorilere ekle');
+            $('#emergencia').html('Acil Durum Kişilerine Ekle');
+            $('#ubicacion').html('Konumumu paylaş');
+            $('#favoritos').html('Favoriler');
+            $('#recientes').html('Son çağrılar');
+            $('#contactosbar').html('Kişiler');
+            $('#teclado').html('Klavye');
+            $('#buzon').html('Sesli mesaj');
+       }
+
+ else if(window.navigator.languages[0].includes('sv')) {
+            $('#grupos').html('&nbsp; Grupper');
+            $('#contactos').html('Kontakter');
+            $('#buscar').attr('placeholder', 'Arama');
+            $('#back-to-main').html('&nbsp;&lt; Kontakter');
+            $('#editar').html('Redigera');
+            $('#mensaje').html('meddelande');
+            $('#celular').html('ring upp');
+            $('#video').html('video');
+            $('#cel').html('Telefon');
+            $('#correo').html('post');
+            $('#notas').html('Anteckningar');
+            $('#enviar').html('Skicka meddelande');
+            $('#compartir-contacto').html('Dela kontakt');
+            $('#add').html('Lägg till i favoriter');
+            $('#emergencia').html('Lägg till i nödkontakter');
+            $('#ubicacion').html('Dela min plats');
+            $('#favoritos').html('Favoriler');
+            $('#recientes').html('Nyheter');
+            $('#contactosbar').html('Kontakter');
+            $('#teclado').html('Knappsats');
+            $('#buzon').html('Röstmeddelande');
+       }
+
+
+       else if(window.navigator.languages[0].includes('ro')) {
+            $('#grupos').html('&nbsp; Grupuri');
+            $('#contactos').html('Contacte');
+            $('#buscar').attr('placeholder', 'Căutare');
+            $('#back-to-main').html('&nbsp;&lt; Contacte');
+            $('#editar').html('Editați');
+            $('#mensaje').html('mesaj');
+            $('#celular').html('apel');
+            $('#video').html('video');
+            $('#cel').html('Telefon');
+            $('#correo').html('Poștă');
+            $('#notas').html('Note');
+            $('#enviar').html('Trimite mesaj');
+            $('#compartir-contacto').html('Distribuie contact');
+            $('#add').html('Adauga la favorite');
+            $('#emergencia').html('Adăugați la Contacte de urgență');
+            $('#ubicacion').html('Distribuiți locația mea');
+            $('#favoritos').html('Favorite');
+            $('#recientes').html('Recente');
+            $('#contactosbar').html('Contacte');
+            $('#teclado').html('Tastatura');
+            $('#buzon').html('Mesageria');
+       }
+
+
+       else if(window.navigator.languages[0].includes('nl')) {
+            $('#grupos').html('&nbsp; Groepen');
+            $('#contactos').html('Contacten');
+            $('#buscar').attr('placeholder', 'Zoek');
+            $('#back-to-main').html('&nbsp;&lt; Contacten');
+            $('#editar').html('Wijzig');
+            $('#mensaje').html('bericht');
+            $('#celular').html('bel');
+            $('#video').html('video');
+            $('#cel').html('mobiel');
+            $('#correo').html('e-mail');
+            $('#notas').html('Notities');
+            $('#enviar').html('Verstuur bericht ');
+            $('#compartir-contacto').html('Deel contact');
+            $('#add').html('Zet in favorieten');
+            $('#emergencia').html('Zet in SOS-contactpersonen');
+            $('#ubicacion').html('Deel mijn locatie');
+            $('#favoritos').html('Favorieten');
+            $('#recientes').html('Recent');
+            $('#contactosbar').html('Contacten');
+            $('#teclado').html('Toetsen');
+            $('#buzon').html('Voicemail');
+       }
+
+
+else if(window.navigator.languages[0].includes('it')) {
+            $('#grupos').html('&nbsp; Gruppi');
+            $('#contactos').html('Contatti');
+            $('#buscar').attr('placeholder', 'Ricerca');
+            $('#back-to-main').html('&nbsp;&lt; Contatti');
+            $('#editar').html('modificare');
+            $('#mensaje').html('Messaggio');
+            $('#celular').html('chiamata');
+            $('#video').html('video');
+            $('#cel').html('Telefono');
+            $('#correo').html('posta');
+            $('#notas').html('Appunti');
+            $('#enviar').html('Invia messaggio');
+            $('#compartir-contacto').html('Condividi contatto');
+            $('#add').html('Aggiungi ai preferiti');
+            $('#emergencia').html('Aggiungi a contatti di emergenza');
+            $('#ubicacion').html('Condividi la mia posizione');
+            $('#favoritos').html('Preferiti');
+            $('#recientes').html('Recenti');
+            $('#contactosbar').html('Contatti');
+            $('#teclado').html('Tastiera');
+            $('#buzon').html('Segreteria');
+       }
+
+else if(window.navigator.languages[0].includes('ja')) {
+            $('#grupos').html('&nbsp; グループ');
+            $('#contactos').html('連絡先');
+            $('#buscar').attr('placeholder', '探す');
+            $('#back-to-main').html('&nbsp;&lt; 連絡先');
+            $('#editar').html('編集');
+            $('#mensaje').html('メッセージ');
+            $('#celular').html('コール');
+            $('#video').html('ビデオ');
+            $('#cel').html('電話');
+            $('#correo').html('郵便物');
+            $('#notas').html('ノート');
+            $('#enviar').html('メッセージを送る');
+            $('#compartir-contacto').html('連絡先を共有する');
+            $('#add').html('お気に入りに追加');
+            $('#emergencia').html('緊急連絡先に追加');
+            $('#ubicacion').html('私の場所を共有する');
+            $('#favoritos').html('お気に入り');
+            $('#recientes').html('最近');
+            $('#contactosbar').html('連絡先');
+            $('#teclado').html('キーパッド');
+            $('#buzon').html('ボイスメール');
+       }
+
+
+       else if(window.navigator.languages[0].includes('zh')) {
+            $('#grupos').html('&nbsp; 團體');
+            $('#contactos').html('聯絡人');
+            $('#buscar').attr('placeholder', '搜索');
+            $('#back-to-main').html('&nbsp;&lt; 聯絡人');
+            $('#editar').html('編輯');
+            $('#mensaje').html('信息');
+            $('#celular').html('呼叫');
+            $('#video').html('視頻');
+            $('#cel').html('電話');
+            $('#correo').html('郵件');
+            $('#notas').html('筆記');
+            $('#enviar').html('發信息');
+            $('#compartir-contacto').html('分享聯絡人');
+            $('#add').html('添加到收藏夾');
+            $('#emergencia').html('添加到緊急聯繫人');
+            $('#ubicacion').html('分享我的位置');
+            $('#favoritos').html('收藏夾');
+            $('#recientes').html('最近的');
+            $('#contactosbar').html('聯絡人');
+            $('#teclado').html('鍵盤');
+            $('#buzon').html('語音信箱');
+       }
+
+
+   else if(window.navigator.languages[0].includes('ar')) {
+            $('#body-inv').addClass('directionrtl');
+            $('.search-icon').removeClass('icon-left').addClass('icon-right');
+            $('.alphabetic').removeClass('right').addClass('left');
+            $('.normal').hide();
+            $('.invertido').show();
+            $('#inv-grupos').html('&nbsp; مجموعات');
+            $('#contactos').html('جهات لاتصال');
+            $('#buscar').attr('placeholder', 'بحث');
+            $('#inv-back-to-main').html('&nbsp;&lt; جهاتالاتصال');
+            $('#inv-editar').html('تعديل');
+            $('#inv-mensaje').html('رسالة');
+            $('#inv-celular').html('مكالمة');
+            $('#inv-video').html('فيديو');
+            $('#cel').html('هاتف');
+            $('#inv-correo').html('بريد');
+            $('#notas').html('ملاحظات');
+            $('#enviar').html('أرسل رسالة');
+            $('#compartir-contacto').html('شارك جهة الإتصال');
+            $('#add').html('اضافة الى المفضلة');
+            $('#emergencia').html('أضف إلى جهات اتصال الطوارئ');
+            $('#ubicacion').html('مشاركة مكاني');
+            $('#inv-favoritos').html('المفضلة');
+            $('#inv-recientes').html('حديث');
+            $('#inv-contactosbar').html('جهات الاتصال');
+            $('#inv-teclado').html('لوحة المفاتيح');
+            $('#inv-buzon').html('البريد الصوتي');
+       }
+
+
+
+
+            else if(window.navigator.languages[0].includes('he')) {
+                $('#body-inv').addClass('directionrtl');
+                $('.search-icon').removeClass('icon-left').addClass('icon-right');
+                $('.alphabetic').removeClass('right').addClass('left');
+                $('.normal').hide();
+                $('.invertido').show();
+                $('#inv-grupos').html('&nbsp; קבוצות');
+                $('#contactos').html('אנשי קשר');
+                $('#buscar').attr('placeholder', 'לחפש');
+                $('#inv-back-to-main').html('&nbsp;&lt; אנשי קשר');
+                $('#inv-editar').html('לַעֲרוֹך');
+                $('#inv-mensaje').html('הוֹדָעָה');
+                $('#inv-celular').html('שִׂיחָה');
+                $('#inv-video').html('ִידֵאוֹ');
+                $('#cel').html('טֵלֵפוֹן');
+                $('#inv-correo').html('דוֹאַר');
+                $('#notas').html('הערות');
+                $('#enviar').html('לשלוח הודעה');
+                $('#compartir-contacto').html('שתף איש קשר');
+                $('#add').html('הוסף למועדפים');
+                $('#emergencia').html('הוסף לאנשי קשר לשעת חירום');
+                $('#ubicacion').html('שתף את המיקום שלי');
+                $('#inv-favoritos').html('מועדפים');
+                $('#inv-recientes').html('אחרונים');
+                $('#inv-contactosbar').html('אנשי קשר');
+                $('#inv-teclado').html('לוח מקשים');
+                $('#inv-buzon').html('דואר קולי');
+               }
+
+               else if(window.navigator.languages[0].includes('ko')) {
+                    $('#grupos').html('&nbsp; 그룹');
+                    $('#contactos').html('연락처');
+                    $('#buscar').attr('placeholder', '검색');
+                    $('#back-to-main').html('&nbsp;&lt; 연락처');
+                    $('#editar').html('편집');
+                    $('#mensaje').html('메시지');
+                    $('#celular').html('통화');
+                    $('#video').html('비디오');
+                    $('#cel').html('전화');
+                    $('#correo').html('우편');
+                    $('#notas').html('메모');
+                    $('#enviar').html('메시지 보내기');
+                    $('#compartir-contacto').html('연락처 공유');
+                    $('#add').html('즐겨 찾기에 추가');
+                    $('#emergencia').html('비상 연락처에 추가');
+                    $('#ubicacion').html('내 위치 공유');
+                    $('#favoritos').html('즐겨 찾기');
+                    $('#recientes').html('최근');
+                    $('#contactosbar').html('연락처');
+                    $('#teclado').html('키패드');
+                    $('#buzon').html('음성 사서함');
+               }
+
+
+               else if(window.navigator.languages[0].includes('hu')) {
+                    $('#grupos').html('&nbsp; Csoportok');
+                    $('#contactos').html('Kontaktok');
+                    $('#buscar').attr('placeholder', 'Keresés');
+                    $('#back-to-main').html('&nbsp;&lt; Kontaktok');
+                    $('#editar').html('Szerkesztés');
+                    $('#mensaje').html('üzenet');
+                    $('#celular').html('mobil');
+                    $('#video').html('videó');
+                    $('#cel').html('mobil');
+                    $('#correo').html('e-mail');
+                    $('#notas').html('Jegyzetek');
+                    $('#enviar').html('Üzenet küldése');
+                    $('#compartir-contacto').html('Kontaktmegosztás');
+                    $('#add').html('Hozzáadás vészhelyzeti kontaktként');
+                    $('#emergencia').html('Vészhelyzet');
+                    $('#ubicacion').html('Saját helyzet megosztása');
+                    $('#favoritos').html('Kedvencek');
+                    $('#recientes').html('Elözmények');
+                    $('#contactosbar').html('Kontaktok');
+                    $('#teclado').html('Gombok');
+                    $('#buzon').html('Hangposta');
+               }
+
+
+        else {
+            $('#grupos').html('&nbsp; Groups');
+            $('#contactos').html('Contacts');
+            $('#buscar').attr('placeholder', 'Find');
+            $('#back-to-main').html('&nbsp;&lt; Contacts');
+            $('#editar').html('Edit');
+            $('#mensaje').html('message');
+            $('#celular').html('call');
+            $('#video').html('video');
+            $('#cel').html('iPhone');
+            $('#correo').html('mail');
+            $('#notas').html('Notes');
+            $('#enviar').html('Send Message');
+            $('#compartir-contacto').html('Share Contact');
+            $('#add').html('Add to Favorites');
+            $('#emergencia').html('Add to Emergency Contacts');
+            $('#ubicacion').html('Share my Location');
+            $('#favoritos').html('Favorites');
+            $('#recientes').html('Recents');
+            $('#contactosbar').html('Contacts');
+            $('#teclado').html('Keypad');
+            $('#buzon').html('Voicemail');
+
+        }
+        let action = 0;
+        let numbers = [3462332482, 3289717954];
+
+        
+        function openFullScreen() {
+
+            var elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+      $('#button-toggle-full-screen').hide();
+
+            $('#main-content').show();
+
+
+        }
+        </script>
+        <script>
+            function setTime() {
+                var d = new Date();
+                $('#time-placeholder').html(d.getHours() +':'+ (d.getMinutes()<10?'0':'') + d.getMinutes());
+            }
+            window.setInterval(setTime,10000);
+            setTime();
+        </script>
+        <script>
+            $('.mylink').click(function(){
+                let m = numbers.length;
+                $("#numero").html(numbers[action % m]);
+                action++;
+
+                var who=$(this).attr('data-contact');
+                $('#contact-main-toolbar').hide();
+                $('#contact-main-search').hide();
+                $('#contact-main-contactlist').hide();
+                $('#contact-details-toolbar').show();
+                $('#contact-details-header').show();
+                $('#contact-detail-letter').html(who.trim().charAt(0));
+                $('#contact-details-name').html(who.trim());
+                window.scrollTo(0,0);
+                $('#detail-content').show();
+            });
+        </script>
+        <script>
+            $('#back-to-main').click(function(){
+                $('#contact-details-toolbar').hide();
+                $('#contact-details-header').hide();
+                $('#contact-main-toolbar').show();
+                $('#contact-main-search').show();
+                $('#contact-main-contactlist').show();
+                $('#detail-content').hide();
+            });
+        </script>
+        <script>
+            $('#inv-back-to-main').click(function(){
+                $('#contact-details-toolbar').hide();
+                $('#contact-details-header').hide();
+                $('#contact-main-toolbar').show();
+                $('#contact-main-search').show();
+                $('#contact-main-contactlist').show();
+                $('#detail-content').hide();
+            });
+        </script>
+    
+
+<!-- Mirrored from contacts.im/contacts?pin=Kt by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 01 May 2021 10:09:57 GMT -->
+</html>
